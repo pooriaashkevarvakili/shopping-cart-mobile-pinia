@@ -13,14 +13,14 @@ export const useCart = defineStore('cart', {
         }
     },
     getters: {
-        allProducts(state) {
-            return state.cart
+        allProducts() {
+            return this.cart
         },
-        count(state) {
-            return state.cart.length
+        count() {
+            return this.cart.length
         },
-        totalAmount(state) {
-            return state.cart.reduce((total, p) => {
+        totalAmount() {
+            return this.cart.reduce((total, p) => {
                 return total + p.price * p.quantity
             }, 0)
         }
